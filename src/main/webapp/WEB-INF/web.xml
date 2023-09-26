@@ -16,11 +16,15 @@
 	<!-- An optional parameter that makes troubleshooting errors much easier. -->
 	<!-- You should change this context parameter before deploying to production! -->
 	<context-param>
-		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-name>jakarta.faces.PROJECT_STAGE</param-name>
 		<param-value>Development</param-value>
 	</context-param>
 	<context-param>
 		<param-name>jakarta.faces.AUTOMATIC_EXTENSIONLESS_MAPPING</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>jakarta.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
 		<param-value>true</param-value>
 	</context-param>
 	<context-param>
@@ -29,10 +33,6 @@
 	</context-param>
 	<context-param>
 		<param-name>primefaces.MOVE_SCRIPTS_TO_BOTTOM</param-name>
-		<param-value>true</param-value>
-	</context-param>
-	<context-param>
-		<param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
 		<param-value>true</param-value>
 	</context-param>
 </web-app>
