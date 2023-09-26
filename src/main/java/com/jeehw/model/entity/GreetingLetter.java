@@ -1,4 +1,4 @@
-package com.jeehw.model;
+package com.jeehw.model.entity;
 
 public class GreetingLetter {
 

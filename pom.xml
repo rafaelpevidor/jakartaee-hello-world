@@ -212,7 +212,11 @@
 			<artifactId>wildfly-arquillian-container-embedded</artifactId>
 			<version>${wildfly-arquillian.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>2.2.224</version>
+		</dependency>
 	</dependencies>
 
 	<build>

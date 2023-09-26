@@ -1,7 +1,15 @@
-package com.jeehw.model;
+package com.jeehw.model.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+
+import java.util.UUID;
+
+@Entity
 public class Guest {
 
+    @Id
     private String id;
 
     private String title;
@@ -9,6 +17,12 @@ public class Guest {
     private String name;
 
     private String email;
+
+    @PrePersist
+    private void onPrePersist() {
+        //There are some implications of setting a table primary key as UUID and the use of it for production purposes should be analysed carefully.
+        this.id = UUID.randomUUID().toString();
+    }
 
     public String getId() {
         return id;
