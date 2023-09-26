@@ -1,0 +1,58 @@
+<ui:composition xmlns:faces="jakarta.faces"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:f="jakarta.faces.core"
+                xmlns:h="jakarta.faces.html"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/layout/template.xhtml">
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewParam name="id" value="#{guestFormController.guest.id}"/>
+            <f:viewAction action="#{guestFormController.init()}"/>
+        </f:metadata>
+    </ui:define>
+    <ui:define name="pageTitle">
+        <ui:fragment rendered="#{empty guestFormController.guestId}">ADD GUEST</ui:fragment>
+        <ui:fragment rendered="#{not empty guestFormController.guestId}">EDIT GUEST</ui:fragment>
+    </ui:define>
+    <ui:define name="content">
+        <form class="needs-validation" novalidate="novalidate">
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="titleName" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="titleName" placeholder="" faces:value="#{guestController.guest.title}" required="required"/>
+                    <div class="invalid-feedback">
+                        Valid last name is required.
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="firstName" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="" faces:value="#{guestController.guest.firstName}" required="required"/>
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="lastName" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="" faces:value="#{guestController.guest.lastName" required="required"/>
+                    <div class="invalid-feedback">
+                        Valid last name is required.
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com" faces:value="#{guestController.guest.email}" required="required"/>
+                    <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                    </div>
+                </div>
+
+                <hr class="my-4"/>
+
+                <button class="w-100 btn btn-primary btn-lg" type="submit" faces:actionListener="#{guestController.save}">Save</button>
+            </div>
+        </form>
+    </ui:define>
+</ui:composition>

@@ -22,19 +22,15 @@
 		<jakartaee-api.version>10.0.0</jakartaee-api.version>
 		<!-- Wildfly server -->
 		<wildfly.version>27.0.1.Final</wildfly.version>
-<!--		<wildfly-maven-plugin.version>4.0.0.Final</wildfly-maven-plugin.version>-->
 		<wildfly-maven-plugin.version>4.2.0.Final</wildfly-maven-plugin.version>
 		<wildfly-arquillian.version>4.0.1.Final</wildfly-arquillian.version>
 		<wildfly-jar-maven-plugin.version>8.1.0.Final</wildfly-jar-maven-plugin.version>
-		<openshift-maven-plugin.version>1.12.0</openshift-maven-plugin.version>
 		<!-- websockets-jsr and resteasy for client, aligned with Wildfly version. -->
 		<undertow-websockets-jsr.version>2.2.17.Final</undertow-websockets-jsr.version>
 		<resteasy.version>6.0.1.Final</resteasy.version><wildfly-arquillian.version>5.0.1.Final</wildfly-arquillian.version>
 		<arquillian-bom.version>1.7.1.Final</arquillian-bom.version>
 		<junit-jupiter.version>5.9.3</junit-jupiter.version>
 		<!-- View -->
-		<adminfaces.version>1.6.1</adminfaces.version>
-<!--		<primefaces.version>11.0.0</primefaces.version>-->
 		<primefaces.version>12.0.0</primefaces.version>
 		<!-- Test Utilities -->
 		<mockito.version>5.4.0</mockito.version>
@@ -44,21 +40,6 @@
 		<jsonassert.version>1.5.1</jsonassert.version>
 		<assertj.version>3.24.2</assertj.version>
 	</properties>
-
-<!--	<repositories>-->
-<!--		<repository>-->
-<!--			<snapshots />-->
-<!--			<id>snapshots</id>-->
-<!--			<name>libs-snapshot</name>-->
-<!--			<url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
-<!--		</repository>-->
-<!--		<repository>-->
-<!--			<id>prime-repo</id>-->
-<!--			<name>PrimeFaces Maven Repository</name>-->
-<!--			<url>http://repository.primefaces.org</url>-->
-<!--			<layout>default</layout>-->
-<!--		</repository>-->
-<!--	</repositories>-->
 
 	<dependencyManagement>
 		<dependencies>
@@ -146,18 +127,25 @@
 			<groupId>jakarta.platform</groupId>
 			<artifactId>jakarta.jakartaee-api</artifactId>
 		</dependency>
-		<!-- Adminfaces/Primefaces -->
-		<dependency>
-			<groupId>com.github.adminfaces</groupId>
-			<artifactId>admin-template</artifactId>
-			<version>${adminfaces.version}</version>
-		</dependency>
+		<!-- Primefaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>${primefaces.version}</version>
 			<classifier>jakarta</classifier>
 		</dependency>
+		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>primeflex</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.omnifaces</groupId>
+			<artifactId>omnifaces</artifactId>
+			<version>4.3</version>
+		</dependency>
+
+		<!-- Arquillian -->
 		<dependency>
 			<groupId>org.jboss.arquillian.junit5</groupId>
 			<artifactId>arquillian-junit5-container</artifactId>
@@ -169,6 +157,11 @@
 			<groupId>org.jboss.arquillian.protocol</groupId>
 			<artifactId>arquillian-protocol-servlet-jakarta</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.wildfly.arquillian</groupId>
+			<artifactId>wildfly-arquillian-container-embedded</artifactId>
+			<version>${wildfly-arquillian.version}</version>
 		</dependency>
 		<!-- Testing -->
 		<dependency>
@@ -207,11 +200,6 @@
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path-assert</artifactId>
         </dependency>
-		<dependency>
-			<groupId>org.wildfly.arquillian</groupId>
-			<artifactId>wildfly-arquillian-container-embedded</artifactId>
-			<version>${wildfly-arquillian.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>

@@ -12,9 +12,11 @@ public class Guest {
     @Id
     private String id;
 
-    private String title;
+    private String titleName;
 
-    private String name;
+    private String firstName;
+
+    private String lastName;
 
     private String email;
 
@@ -22,6 +24,10 @@ public class Guest {
     private void onPrePersist() {
         //There are some implications of setting a table primary key as UUID and the use of it for production purposes should be analysed carefully.
         this.id = UUID.randomUUID().toString();
+    }
+
+    public String getFullname() {
+        return firstName + " " + lastName;
     }
 
     public String getId() {
@@ -32,20 +38,28 @@ public class Guest {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitleName() {
+        return titleName;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitleName(String titleName) {
+        this.titleName = titleName;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -76,8 +90,9 @@ public class Guest {
     public String toString() {
         return "Guest{" +
                 "id='" + id + '\'' +
-                ", title='" + title + '\'' +
-                ", name='" + name + '\'' +
+                ", title='" + titleName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }

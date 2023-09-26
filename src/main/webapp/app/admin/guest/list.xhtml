@@ -1,0 +1,27 @@
+<ui:composition xmlns:faces="jakarta.faces"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:f="jakarta.faces.core"
+                xmlns:h="jakarta.faces.html"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/layout/template.xhtml">
+    <ui:define name="pageTitle">LIST GUESTS</ui:define>
+    <ui:define name="content">
+        <form class="needs-validation" novalidate="novalidate">
+            <div class="card">
+                <p:dataTable var="guest" value="#{guestListController.entityList}">
+                    <p:column headerText="Title">
+                        <h:outputText value="#{guest.titleName}" />
+                    </p:column>
+
+                    <p:column headerText="Name">
+                        <h:outputText value="#{guest.fullName}" />
+                    </p:column>
+
+                    <p:column headerText="Email">
+                        <h:outputText value="#{guest.email}" />
+                    </p:column>
+                </p:dataTable>
+            </div>
+        </form>
+    </ui:define>
+</ui:composition>
