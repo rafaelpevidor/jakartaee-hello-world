@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
 	<welcome-file-list>
-		<welcome-file>index.xhtml</welcome-file>
+		<welcome-file>pages/index.xhtml</welcome-file>
 	</welcome-file-list>
 	<servlet>
 		<servlet-name>jakarta.ws.rs.core.Application</servlet-name>
@@ -27,14 +27,11 @@
 		<param-name>jakarta.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
 		<param-value>true</param-value>
 	</context-param>
-<!--	<context-param>-->
-<!--		<param-name>primefaces.FONT_AWESOME</param-name>-->
-<!--		<param-value>true</param-value>-->
-<!--	</context-param>-->
 	<context-param>
 		<param-name>primefaces.MOVE_SCRIPTS_TO_BOTTOM</param-name>
 		<param-value>true</param-value>
 	</context-param>
+	<!-- It's not recommended for productive environments -->
 	<data-source>
 		<name>java:global/GreetingsDS</name>
 		<class-name>org.h2.jdbcx.JdbcDataSource</class-name>

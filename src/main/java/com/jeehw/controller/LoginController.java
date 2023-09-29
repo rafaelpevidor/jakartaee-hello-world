@@ -17,7 +17,7 @@ public class LoginController implements Serializable {
     private boolean remember;
 
     public void doLogin() {
-        Messages.addInfo(null,"Logged in sucessfully as <b>"+email+"</b>");
+        Messages.addInfo(null,"Logged in sucessfully as " + email + ".");
         Faces.getExternalContext().getFlash().setKeepMessages(true);
         Faces.redirect("app/home.xhtml");
     }

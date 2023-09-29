@@ -26,7 +26,7 @@ public class Guest {
         this.id = UUID.randomUUID().toString();
     }
 
-    public String getFullname() {
+    public String getFullName() {
         return firstName + " " + lastName;
     }
 

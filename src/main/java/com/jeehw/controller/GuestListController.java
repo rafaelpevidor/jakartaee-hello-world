@@ -20,18 +20,19 @@ public class GuestListController implements Serializable {
     @Inject
     private GuestRepository guests;
 
-    private List<Guest> guestList = new ArrayList<>();
+    private List<Guest> entityList = new ArrayList<>();
 
+    //Method to initialize the data in the page in JSF invoke application phase. The execution is triggered by a viewAction in xhtml page.
     public void init() {
-        LOGGER.info("Initializing guest list....");
-        this.guestList = guests.findAll();
+        LOGGER.info("Initializing guest list...");
+        this.entityList = guests.findAll();
     }
 
-    public List<Guest> getGuestList() {
-        return guestList;
+    public List<Guest> getEntityList() {
+        return entityList;
     }
 
-    public void setGuestList(List<Guest> guestList) {
-        this.guestList = guestList;
+    public void setEntityList(List<Guest> entityList) {
+        this.entityList = entityList;
     }
 }
