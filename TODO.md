@@ -11,12 +11,15 @@ This is simple application build to demonstrate some JakartaEE 10 capabilities.
 - [ ] Create Guest CRUD Repository Tests
 - [ ] Create Guest form view
   - [ ] Adjust view layout
+  - [ ] Add bean/form validation
   - [ ] Add delete button
   - [ ] Add save button
+  - [ ] Add back button/link
 - [ ] Create Guest form controller
   - [X] Fix load entity feature (to enable edit mode, f:param is hasn't being passed)
   - [ ] Add delete feature
   - [X] Add save feature
+    - [ ] Add faces redirect with flash messages
 - [ ] Work on the website ~3d #feat @john 2020-03-20
 - [ ] Fix the homepage ~1d #bug @jane
     - [ ] Sub-task or description
@@ -33,6 +36,7 @@ This is simple application build to demonstrate some JakartaEE 10 capabilities.
   - [X] Add edit button into the list 
   - [ ] Add delete button into the list 
   - [ ] Add search feature 
+  - [ ] Add pagination feature 
 
 ### Done ✓
 
